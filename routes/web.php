@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/incoming', function() {
-   Log::info(json_encode(request()->all()));
+Route::middleware(['validateMailgun'])->group(function() {
+    Route::post('/incoming', function () {
+        Log::info(json_encode(request()->all()));
+    });
 });

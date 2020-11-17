@@ -107,4 +107,8 @@ return [
         ],
     ],
 
+    'webhook' => [
+        'signing_key' => env('MAILGUN_WEBHOOK_KEY')
+    ]
+
 ];
