@@ -19,6 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/incoming', function(Request $request) {
-   Log::info(json_encode($request->all()));
+Route::post('/incoming', function() {
+   Log::info(json_encode(request()->all()));
 });
